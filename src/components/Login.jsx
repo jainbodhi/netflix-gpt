@@ -1,7 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Header from "./Header";
+import { checkValidateData } from "../utils/Validate";
+
 const Login = () => {
     const [isSignForm, setIsSignForm] = useState(1);
+    const [formError, setFormError] = useState(null);
+    const email = useRef(null);
+    const password = useRef(null);
+
+    function handleFormSubmit() {
+        const validResult = checkValidateData(   
+            email.current.value,
+            password.current.value
+        );
+        setFormError(validResult);
+    }
     function handleToggleSign() {
         setIsSignForm(isSignForm ^ 1);
     }
@@ -28,19 +41,28 @@ const Login = () => {
                             className="m-4 p-4 w-80 mx-auto bg-[#333] rounded-sm"
                             type="full name"
                             placeholder="Full Name"
+                            required
                         />
                     ) : null}
                     <input
+                        ref={email}
                         className="m-4 p-4 w-80 mt-1 mx-auto bg-[#333] rounded-sm"
                         type="email"
                         placeholder="Email or phone number"
                     />
                     <input
+                        ref={password}
                         className="m-4 p-4 mt-1 w-80 mx-auto bg-[#333] rounded-sm"
                         type="password"
                         placeholder="Password"
                     />
-                    <submit className="mb-0 rounded-md w-80 mx-auto cursor-pointer text-center m-4 p-4 bg-red-700 text-white">
+                    <p className="text-lg text-red-500 font-bold mx-10">
+                        {formError}
+                    </p>
+                    <submit
+                        className="mb-0 rounded-md w-80 mx-auto cursor-pointer text-center m-4 p-4 bg-red-700 text-white"
+                        onClick={handleFormSubmit}
+                    >
                         Sign In
                     </submit>
                     <div className="Below Button flex justify-between mx-10  mt-1">
