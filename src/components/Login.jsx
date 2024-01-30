@@ -28,7 +28,7 @@ const Login = () => {
                 const token = credential.accessToken;
                 // The signed-in user info.
                 const user = result.user;
-                navigator("/browse");
+
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...
             })
@@ -75,7 +75,6 @@ const Login = () => {
                         .then(() => {
                             // Profile updated!
                             // ...
-                            navigator("/browse");
                         })
                         .catch((error) => {
                             // An error occurred
@@ -100,7 +99,6 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed in
                     const user = userCredential.user;
-                    navigator("/browse");
                 })
                 .catch((error) => {
                     const errorCode = error.code;

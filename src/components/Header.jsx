@@ -27,7 +27,7 @@ const Header = () => {
         <div>
             <WarningClone />
             <img
-                className="z-50 absolute w-60 shadow-inner"
+                className="z-50 absolute w-48 shadow-inner"
                 src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
                 alt="logo"
                 srcset=""
@@ -35,7 +35,7 @@ const Header = () => {
             {user && (
                 <>
                     <button
-                        className="z-40 absolute m-2 p-2 top-0 right-0 transform translate-y-10 bg-red-600 rounded-lg text-3xl font-bold text-green-700"
+                        className="z-40 absolute m-2 p-2 top-0 right-0 transform translate-y-10 bg-red-600 rounded-lg text-2xl font-bold text-green-700"
                         onClick={handleSignOut}
                     >
                         Sign Out
