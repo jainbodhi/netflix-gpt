@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { API_OPTIONS } from "../utils/constants";
 import { useDispatch } from "react-redux";
-import { addNowPlaying } from "../utils/moviesSlice";
+import { addTopRated } from "../utils/moviesSlice";
 
-const useNowPlayingMovies = () => {
+const useTopRated = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
         const url =
-            "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
+            "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
 
         async function getMoviesFetchFunction() {
             try {
                 const data = await fetch(url, API_OPTIONS);
                 const json = await data.json(); // Corrected: Call the json() method
-                dispatch(addNowPlaying(json.results));
+                dispatch(addTopRated(json.results));
             } catch (error) {
                 console.error("Error fetching movies:", error);
             }
@@ -23,4 +23,4 @@ const useNowPlayingMovies = () => {
     }, []);
 };
 
-export default useNowPlayingMovies;
+export default useTopRated;

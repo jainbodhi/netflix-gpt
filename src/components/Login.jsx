@@ -9,6 +9,7 @@ import {
     GoogleAuthProvider,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { BG_IMG_URL } from "../utils/constants";
 
 const Login = () => {
     const [isSignForm, setIsSignForm] = useState(1);
@@ -118,7 +119,7 @@ const Login = () => {
                 <div className="z-10 opacity-40 absolute size-full bg-black"></div>
                 <img
                     className="absolute bg-center bg-fixed bg-cover bg-no-repeat h-full w-full"
-                    src="https://assets.nflxext.com/ffe/siteui/vlv3/594f8025-139a-4a35-b58d-4ecf8fdc507c/d3c4e455-f0bf-4003-b7cd-511dda6da82a/IN-en-20240108-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
+                    src={BG_IMG_URL}
                     alt="bg-image"
                 />
                 <form
