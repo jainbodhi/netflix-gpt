@@ -1,5 +1,6 @@
 # Getting Started with Create React App
-
+## HTML CSS JAVASCRIPT REACTJS REDUX/TOOLKIT FIREBASE TMDB_API CHATGPT_API 
+## Transfering from ReactJS ==> NextJS
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
