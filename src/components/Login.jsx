@@ -117,11 +117,11 @@ const Login = () => {
             <Header />
             <div className="flex flex-row absolute size-full ">
                 <div className="z-10 opacity-40 absolute size-full bg-black"></div>
-                <img
+                <div
                     className="absolute bg-center bg-fixed bg-cover bg-no-repeat h-full w-full"
-                    src={BG_IMG_URL}
+                    style={{ backgroundImage: `url(${BG_IMG_URL})` }}
                     alt="bg-image"
-                />
+                ></div>
                 <form
                     className="text-white bg-black bg-opacity-75 flex flex-col z-40 reletive p-12 mx-auto my-auto size-[500px] h-auto "
                     action=""

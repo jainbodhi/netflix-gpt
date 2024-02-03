@@ -5,11 +5,11 @@ import { BG_IMG_URL } from "../utils/constants";
 const GptSearch = () => {
     return (
         <>
-            <img
-                className="absolute -z-10 w-screen h-screen"
-                src={BG_IMG_URL}
+            <div
+                className="absolute -z-10 w-full h-full bg-no-repeat bg-cover bg-center bg-fixed"
+                style={{ backgroundImage: `url(${BG_IMG_URL})` }}
                 alt="bg_img"
-            />
+            ></div>
             <div className="bg-transparent text-black mt-40">
                 <GptSearchBar />
                 <GptMovieSuggestion />
