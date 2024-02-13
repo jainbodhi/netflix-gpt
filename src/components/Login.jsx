@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { BG_IMG_URL } from "../utils/constants";
 
 const Login = () => {
-    const [isSignForm, setIsSignForm] = useState(1);
+    const [isSignForm, setIsSignForm] = useState(0);
     const [formError, setFormError] = useState(null);
     const fullname = useRef(null);
     const email = useRef(null);
@@ -108,9 +108,11 @@ const Login = () => {
                 });
         }
     }
-    function handleToggleSign() {
-        console.log("Toggle");
+    function handleToggleSign(e) {
+        e.preventDefault();
+        console.log("Before Toggle", isSignForm);
         setIsSignForm(isSignForm ^ 1);
+        console.log("After Toggle", isSignForm);
     }
     return (
         <>
@@ -118,12 +120,12 @@ const Login = () => {
             <div className="flex flex-row absolute size-full ">
                 <div className="z-10 opacity-40 absolute size-full bg-black"></div>
                 <div
-                    className="absolute bg-center bg-fixed bg-cover bg-no-repeat h-full w-full"
+                    className="absolute bg-center bg-fixed bg-cover h-full w-full"
                     style={{ backgroundImage: `url(${BG_IMG_URL})` }}
                     alt="bg-image"
                 ></div>
                 <form
-                    className="text-white bg-black bg-opacity-75 flex flex-col z-40 reletive p-12 mx-auto my-auto size-[500px] h-auto "
+                    className="text-white bg-black bg-opacity-75 flex flex-col z-40 reletive p-12 pt-0 mx-auto my-auto size-[450px] h-auto "
                     action=""
                 >
                     <span className="text-white text-4xl ml-10 m-4 ">
